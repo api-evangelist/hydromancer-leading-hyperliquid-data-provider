@@ -1,0 +1,64 @@
+generated: '2026-09-21'
+method: searched
+source: >-
+  https://docs.hydromancer.xyz/readme/rest-api.md +
+  https://docs.hydromancer.xyz/readme/rest-api/rate-limits-and-user-limits.md +
+  https://docs.hydromancer.xyz/readme/websocket.md +
+  https://docs.hydromancer.xyz/readme/websocket/changelog.md
+summary: >-
+  Cross-cutting request/response semantics for the Hydromancer Hyperliquid data platform, captured from
+  the published docs. The surface is READ-ONLY: the REST API is a single POST /info dispatcher whose
+  `type` field selects a query operation, and the WebSocket API is a subscribe/stream surface. There is
+  no state-mutating write operation, so idempotency and reversibility are not applicable.
+authentication:
+  styles: [api_key_bearer_header, api_key_query]
+  rest_header: 'Authorization: Bearer YOUR_API_KEY'
+  websocket: API key passed as a query parameter on the wss connection URL
+  see: authentication/hydromancer-leading-hyperliquid-data-provider-authentication.yml
+request_dispatch:
+  style: type-dispatcher
+  notes: >-
+    All REST operations are POST /info with a JSON body whose `type` field names the operation
+    (e.g. clearinghouseState, l2Book, userFills). This mirrors the native Hyperliquid /info pattern.
+pagination:
+  style: time-range
+  notes: >-
+    Historical/time-series operations (the *ByTime family: userFillsByTime, fundingHistory,
+    liquidationHistoryByTime, perpPriceHistoryByTime, etc.) are windowed by start/end time parameters
+    rather than opaque cursors. WebSocket replay uses a `cursor` token to replay missed events on
+    reconnect (documented for perpPrices, hip4MarketEvents and the user-entity channels).
+request_tracing:
+  supported: true
+  scope: websocket
+  notes: >-
+    WebSocket subscribe/unsubscribe requests accept an optional string `requestId` (capped at 128
+    characters, no control characters); confirmations and rejects echo it, and subscriptionUpdate adds
+    `operation` and `subscription` context. Orderbook-family rejects carry stable `code` and `details`
+    fields.
+error_envelope:
+  shape: '{"error": "<message>"}'
+  see: errors/hydromancer-leading-hyperliquid-data-provider-problem-types.yml
+rate_limit_signaling:
+  style: weight-based-quota
+  notes: >-
+    REST enforces an aggregated per-minute weight budget per tier (default weight 2 per request, higher
+    for heavy endpoints); market-data snapshot endpoints have separate fixed windows. WebSocket enforces
+    per-tier connection, subscription and inbound-message limits. See rate-limits artifact. The docs do
+    not document X-RateLimit-* response headers.
+  see: rate-limits/hydromancer-leading-hyperliquid-data-provider-rate-limits.yml
+idempotency:
+  coverage: na
+  mechanism: null
+  header: null
+  retention: null
+  docs: https://docs.hydromancer.xyz/readme/rest-api
+  notes: >-
+    The API is read-only (query dispatcher + streaming). There is no mutating write surface, so an
+    idempotency-key mechanism is not applicable rather than missing. Repeated identical queries are
+    naturally safe to retry.
+reversibility:
+  applicable: false
+  state: na
+  notes: >-
+    Read-only data API — no create/update/delete/transfer operations exist, so there is nothing to
+    reverse, cancel or undo. Reversibility is not applicable.

@@ -1,0 +1,22 @@
+generated: '2026-09-21'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: docs.hydromancer.xyz
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Dec  1 17:49:15 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: api.hydromancer.xyz
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Nov 27 12:27:47 2026 GMT
+  hsts: null
+domains:
+- domain: hydromancer.xyz
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: reject

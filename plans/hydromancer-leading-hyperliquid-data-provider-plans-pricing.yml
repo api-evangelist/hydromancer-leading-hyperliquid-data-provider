@@ -1,0 +1,78 @@
+name: Hydromancer pricing
+generated: '2026-09-21'
+method: searched
+source: https://docs.hydromancer.xyz/readme/pricing.md
+audience: developer-api
+pricing_basis: tiered-subscription
+published: true
+delivery:
+  delivery: managed
+plan_count: 4
+notes: >-
+  Token-metered subscription tiers. Each REST request consumes 1 token by default, with per-endpoint
+  exceptions (e.g. clearinghouseState 0.025 tokens/DEX, portfolioState 0.05/DEX + 0.05 flat,
+  activeAssetData/perpAnnotation 0.1 tokens). Monthly token quota per tier with per-100k-token overage.
+  Some endpoints (allFills, market-data snapshots) and all-coins WebSocket firehoses are paid add-ons
+  ($400 per connection for all-coins allFills/trades). Onboarding is manual (contact data@hydromancer.xyz).
+  In addition to the four paid tiers below, Hydromancer runs a discretionary FREE program for public-goods
+  tools and pre-revenue builder-code apps (monthly cohorts, up to 3 applications/month; charging begins
+  when a builder wallet starts earning revenue) — see
+  https://docs.hydromancer.xyz/readme/hydromancer-for-early-stage-teams.md
+plans:
+  - name: Starter
+    description: For recently launched apps.
+    price: 300
+    price_text: 300 per month
+    currency: USD
+    billing_period: month
+    features:
+      - 500k tokens included per month
+      - Testnet APIs
+      - 10 orderbook streams
+    limits:
+      - 500k tokens/month included
+      - $60 per 100k tokens overage
+      - REST aggregated weight 5000/minute
+      - 'WebSocket: 50 connections, 500 total subscriptions, 300 inbound msgs/minute'
+      - 10 orderbook streams
+  - name: Growth
+    description: Best plan for scaling teams.
+    price: 1200
+    price_text: 1200 per month
+    currency: USD
+    billing_period: month
+    features:
+      - 3m tokens included per month
+      - Testnet APIs
+      - 50 orderbook streams
+    limits:
+      - 3m tokens/month included
+      - $25 per 100k tokens overage
+      - REST aggregated weight 20000/minute
+      - 'WebSocket: 500 connections, 5000 total subscriptions, 3000 inbound msgs/minute'
+      - 50 orderbook streams
+  - name: Scale
+    description: For data-rich, large apps.
+    price: 2500
+    price_text: 2500 per month
+    currency: USD
+    billing_period: month
+    features:
+      - 15m tokens included per month
+      - Testnet APIs
+      - 100 orderbook streams
+    limits:
+      - 15m tokens/month included
+      - $10 per 100k tokens overage
+      - REST aggregated weight 50000/minute
+      - 'WebSocket: 1000 connections, 10000 total subscriptions, 6000 inbound msgs/minute'
+      - 100 orderbook streams
+  - name: Enterprise
+    description: Bespoke pricing for partners requiring high request volumes or granular custom Hyperliquid data.
+    price: Custom pricing
+    price_text: Custom pricing
+    features:
+      - Unlimited API calls
+      - Unlimited addresses monitoring
+    limits:
+      - Custom / negotiated limits

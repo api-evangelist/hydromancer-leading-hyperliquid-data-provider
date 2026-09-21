@@ -1,0 +1,12 @@
+generated: '2026-09-21'
+method: none
+source: >-
+  Probed 2026-09-21: /.well-known/security.txt, /security.txt, /legal/subprocessors, /legal/dpa,
+  /accessibility, /data-residency (all 404 on hydromancer.xyz); harvested security-programs probe
+  (vdp=none, trust=none); reviewed docs index (llms.txt) — no horizontal-regulatory pages found.
+signals: {}
+notes: >-
+  No horizontal regulatory-posture signals published. Hydromancer is an early-stage Hyperliquid data
+  infrastructure startup with onboarding by direct contact; there is no SBOM, subprocessor list, DPA,
+  accessibility/VPAT, data-residency, AI-transparency, GPC or transparency-report artifact on its site
+  or docs. Absence is the measurement.

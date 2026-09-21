@@ -1,0 +1,34 @@
+generated: '2026-09-21'
+method: searched
+source: https://docs.hydromancer.xyz/readme/rest-api.md (Error responses section)
+format: custom-json
+envelope:
+  shape: '{"error": "<human-readable message>"}'
+  media_type: application/json
+  notes: >-
+    Hydromancer does not use RFC 9457 problem+json. Every error is a flat JSON object with a single
+    string `error` field carrying a human-readable message. There is no machine-readable error code,
+    type URI, or per-field detail structure. The HTTP status carries the class of failure.
+problems:
+  - status: 400
+    title: Bad Request
+    type: null
+    description: >-
+      Malformed request — e.g. an invalid Ethereum address. Example body:
+      {"error": "Invalid Ethereum address: 0xinvalid"}.
+    remediation: Validate address/parameter formats before sending.
+  - status: 401
+    title: Unauthorized
+    type: null
+    description: 'Missing or invalid API key. Example body: {"error": "Invalid API key"}.'
+    remediation: Send a valid API key as an Authorization Bearer token; contact data@hydromancer.xyz to obtain one.
+  - status: 500
+    title: Internal Server Error
+    type: null
+    description: 'Unexpected server-side failure. Example body: {"error": "An internal error occurred"}.'
+    remediation: Retry with backoff; contact support if it persists.
+  - status: 502
+    title: Bad Gateway
+    type: null
+    description: 'Upstream timeout. Example body: {"error": "Timeout error"}.'
+    remediation: Retry with backoff.

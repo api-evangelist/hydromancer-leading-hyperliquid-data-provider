@@ -1,0 +1,48 @@
+name: Hydromancer REST rate limits
+generated: '2026-09-21'
+method: searched
+source: https://docs.hydromancer.xyz/readme/rest-api/rate-limits-and-user-limits.md
+response_headers:
+  documented: false
+  notes: >-
+    The docs do not document X-RateLimit-* / RateLimit-* response headers or a specific status code on
+    exhaustion. REST limits are enforced as an aggregated per-minute weight budget per tier.
+limits:
+  - name: REST aggregated weight per minute (Starter)
+    scope: per-key
+    window: minute
+    max: 5000
+    plan: Starter
+    limit_text: '5000'
+    kind: weight-budget
+    notes: Requests have a default weight of 2 points; heavy endpoints cost more.
+  - name: REST aggregated weight per minute (Growth)
+    scope: per-key
+    window: minute
+    max: 20000
+    plan: Growth
+    limit_text: '20,000'
+    kind: weight-budget
+  - name: REST aggregated weight per minute (Scale)
+    scope: per-key
+    window: minute
+    max: 50000
+    plan: Scale
+    limit_text: '50,000'
+    kind: weight-budget
+  - name: Default request weight
+    scope: per-key
+    limit_text: default weight of 2 points
+    notes: >-
+      Heavier endpoints cost more per call (e.g. userPnlSummary / userPnlLeaderboard /
+      userCompletedTrades = 20, userFills / historicalOrders / userFunding = 10,
+      builderApprovedFillsByTime = 100).
+  - name: Market-data snapshot endpoints
+    scope: per-endpoint
+    endpoint: market-data snapshots
+    limit_text: 5 times per 10 minutes
+    notes: Snapshot/l4Book market-data endpoints have their own window separate from the weight budget.
+  - name: l4Book
+    scope: per-endpoint
+    endpoint: l4Book
+    limit_text: 10 requests per 5 minutes

@@ -1,0 +1,37 @@
+name: Hydromancer WebSocket rate limits
+generated: '2026-09-21'
+method: searched
+source: https://docs.hydromancer.xyz/readme/websocket/rate-limits-user-limits-and-heartbeats.md
+response_headers:
+  documented: false
+  notes: WebSocket limits are per-tier connection, subscription and inbound-message caps; no rate-limit response headers documented.
+limits:
+  - name: WebSocket max connections (Scale; Starter 50 / Growth 500 / Scale 1000)
+    scope: per-key
+    max: 1000
+    plan: Scale
+    limit_text: '1000'
+    notes: 'Max connections per tier: Starter 50, Growth 500, Scale 1000.'
+  - name: WebSocket max total subscriptions (Scale; Starter 500 / Growth 5000 / Scale 10000)
+    scope: per-key
+    max: 10000
+    plan: Scale
+    limit_text: '10000'
+    notes: 'Max total subscriptions per tier: Starter 500, Growth 5000, Scale 10000. Each address in a multi-address subscription counts as 1.'
+  - name: WebSocket max inbound messages per minute (Scale; Starter 300 / Growth 3000 / Scale 6000)
+    scope: per-key
+    window: minute
+    max: 6000
+    plan: Scale
+    limit_text: '6000'
+    notes: 'Max msgs to Hydromancer per minute: Starter 300, Growth 3000, Scale 6000.'
+  - name: WebSocket orderbook streams (Scale; Starter 10 / Growth 50 / Scale 100)
+    scope: per-key
+    max: 100
+    plan: Scale
+    limit_text: '100'
+    notes: 'Orderbooks streamed per tier: Starter 10, Growth 50, Scale 100.'
+  - name: WebSocket heartbeat ping interval
+    scope: per-connection
+    limit_text: 'ping interval: 60 seconds'
+    notes: Server pings every 60 seconds; client must respond with pong.

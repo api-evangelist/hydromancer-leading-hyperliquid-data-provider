@@ -1,0 +1,37 @@
+generated: '2026-09-21'
+method: probed
+source: >-
+  https://docs.hydromancer.xyz/.well-known/mcp/server-card.json (served, content-type
+  application/mcp-server-card+json) + live tools/list POST to https://docs.hydromancer.xyz/~gitbook/mcp
+  (HTTP 200, text/event-stream) on 2026-09-21.
+status: active
+server:
+  name: Hydromancer MCP Server
+  card_name: com.gitbook.sites.mcp/site_dwQH5
+  version: 0.27.2
+  website: https://docs.hydromancer.xyz
+  transport: streamable-http
+  provider: GitBook-hosted documentation MCP, served from Hydromancer's own docs domain and branded as the Hydromancer MCP Server
+  supported_protocol_versions: ['2025-06-18', '2025-03-26', '2024-11-05', '2024-10-07']
+auth: none
+deployment:
+  mode: remote
+  endpoint: https://docs.hydromancer.xyz/~gitbook/mcp
+  auth: none
+  verified: probed
+tools:
+  - name: searchDocumentation
+    description: >-
+      Search across the Hydromancer documentation to find relevant information, code examples, API
+      references and guides; returns contextual content with titles and direct links.
+  - name: getPage
+    description: Fetch the full markdown content of a specific Hydromancer documentation page.
+  - name: sendFeedback
+    description: Report an issue in the Hydromancer documentation so the team can fix it.
+notes: >-
+  This is a documentation-search/read MCP server (search, fetch page, send feedback), not an MCP wrapper
+  over the trading-data REST/WebSocket API. It is a real, anonymously reachable remote agent surface
+  hosted on Hydromancer's own docs host (GitBook-powered). No MCP server exposing the /info data
+  operations is published; a data-API tool crosswalk cannot be derived because there is no OpenAPI to
+  ground it. Probes of mcp.hydromancer.xyz/mcp (connection error) and api.hydromancer.xyz/mcp (404)
+  returned nothing.

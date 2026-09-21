@@ -1,0 +1,27 @@
+generated: '2026-09-21'
+method: searched
+source: https://docs.hydromancer.xyz/readme/rest-api.md
+description: >-
+  Hydromancer publishes a testnet environment that mirrors the production (mainnet) API. It is reached at
+  a separate host and uses the same Bearer-token / query-parameter API-key authentication; per the docs
+  "everything is the same except when it's described in the docs of the specific endpoint." Testnet access
+  is included in the Starter, Growth and Scale tiers. As a read-only Hyperliquid data API there are no
+  payment test cards, magic tokens, time simulation, or trigger fixtures — the sandbox is simply the
+  Hyperliquid testnet data surface.
+docs:
+  - https://docs.hydromancer.xyz/readme/rest-api
+  - https://docs.hydromancer.xyz/readme/get-api-keys
+environments:
+  - name: mainnet
+    rest_base_url: https://api.hydromancer.xyz
+    websocket_base_url: wss://api.hydromancer.xyz/ws
+  - name: testnet
+    rest_base_url: https://api-testnet.hydromancer.xyz
+    websocket_base_url: wss://api-testnet.hydromancer.xyz/ws
+    notes: >-
+      WebSocket testnet host is inferred from the mainnet pattern; the docs state the REST testnet base
+      explicitly and that testnet behaviour matches mainnet unless an endpoint's own docs say otherwise.
+gaps:
+  - No payment/card test values (read-only data API, not a payments provider).
+  - No time-simulation / test-clock tooling.
+  - WebSocket testnet URL not stated verbatim in docs (inferred from REST testnet host pattern).

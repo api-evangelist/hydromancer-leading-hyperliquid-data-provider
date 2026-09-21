@@ -1,0 +1,11 @@
+generated: '2026-09-21'
+method: none
+source: >-
+  Searched npm (registry.npmjs.org search + package lookup), PyPI (pypi.org/pypi/hydromancer/json),
+  and the docs/SDK pages (llms.txt index) on 2026-09-21.
+packages: []
+notes: >-
+  No first-party client SDK or CLI is published. npm search for "hydromancer" returns 0 results,
+  the npm package `hydromancer` and PyPI project `hydromancer` do not exist (404), and the documentation
+  provides raw HTTP examples only (POST /info with Bearer auth) with no SDK/library references. Consumers
+  integrate directly against the REST and WebSocket endpoints.

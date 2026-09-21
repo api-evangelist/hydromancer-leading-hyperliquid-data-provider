@@ -1,0 +1,33 @@
+generated: '2026-09-21'
+method: searched
+source: >-
+  https://docs.hydromancer.xyz/readme/websocket/changelog.md +
+  https://docs.hydromancer.xyz/readme/incidents.md +
+  https://docs.hydromancer.xyz/readme/rest-api.md
+versioning:
+  scheme: none-formal
+  notes: >-
+    No formal API version identifier (no version path segment or version header). The REST surface is a
+    single POST /info dispatcher whose `type` field selects the operation, mirroring the native
+    Hyperliquid pattern. Protocol evolution is communicated through a dated WebSocket changelog; changes
+    are described as additive with "no wire-format change: no field was added, removed, or renamed."
+deprecation:
+  policy_documented: false
+  headers: none-documented
+  upcoming:
+    - change: l4BookUpdates `merge` will become the default for coin-list subscriptions in a future release
+      date_announced: '2026-08-20'
+      guidance: >-
+        Set `merge` explicitly now — `true` to adopt early, `false` to pin today's one-stream-per-subscribe
+        behaviour through the change. The flag stays accepted afterwards.
+  notes: >-
+    No RFC 8594 Sunset/Deprecation header policy is documented. The only announced behavioural change is
+    the l4BookUpdates merge-default migration above; changelog entries are otherwise additive.
+sla:
+  published: false
+  notes: No formal SLA/uptime commitment is published; "no more rate limits" and low-latency infra are marketing claims.
+status_page: null
+incidents_page: https://docs.hydromancer.xyz/readme/incidents
+incidents_notes: >-
+  A public incident-report page is maintained (not a live status dashboard). One incident is on record:
+  2026-08-22, degraded hosting-provider network performance, API and WebSocket unavailable ~1 hour, resolved.

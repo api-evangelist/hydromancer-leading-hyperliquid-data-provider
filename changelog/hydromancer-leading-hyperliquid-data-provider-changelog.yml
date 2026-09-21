@@ -1,0 +1,75 @@
+generated: '2026-09-21'
+method: searched
+source: https://docs.hydromancer.xyz/readme/websocket/changelog.md
+docs: https://docs.hydromancer.xyz/readme/websocket/changelog
+url: https://docs.hydromancer.xyz/readme/websocket/changelog
+scheme: date-based
+current_version: '2026-09-09'
+notes: >-
+  Customer-visible WebSocket protocol changelog, dated. Entries are additive except corrected error text.
+  There is no separate REST changelog published.
+entries:
+  - version: '2026-09-09'
+    date: '2026-09-09'
+    breaking: false
+    highlights:
+      - >-
+        Address-scoped unsubscribe on user-entity channels now subtracts only the named addresses,
+        releasing their subscription units, instead of requiring the entire merged set to be named.
+        Applies to userFills, userOrderUpdates, userNonFundingLedgerEvents, userTwapStatusUpdates,
+        userLeverageUpdates, userIsolatedMarginUpdates, userCompletedTrades. No wire-format change.
+  - version: '2026-09-08'
+    date: '2026-09-08'
+    breaking: false
+    highlights:
+      - >-
+        New hip4MarketEvents subscription streaming every HIP-4 outcome/question lifecycle transition
+        (registration, child association, description change, settlement) with optional venue/category
+        filters and cursor replay. Replaces timer-based polling of registeredOutcomes/settledOutcomes.
+  - version: '2026-09-02'
+    date: '2026-09-02'
+    breaking: false
+    highlights:
+      - >-
+        New perpPrices subscription: accepted oracle/mark/external perp prices per block on every dex
+        including HIP-3, the streaming counterpart of perpPriceHistoryByTime, with gap-free seq and
+        30-second cursor replay.
+  - version: '2026-08-28'
+    date: '2026-08-28'
+    breaking: false
+    highlights:
+      - >-
+        Subscription-ack ordering: a subscription change is now acknowledged after every frame already
+        in flight when it committed, so coin-set changes apply on the ack rather than the request.
+        Applies to l4BookUpdates and most user/builder channels; l2Book/l2BookDiff/bbo/candle unchanged.
+  - version: '2026-08-20'
+    date: '2026-08-20'
+    breaking: false
+    highlights:
+      - >-
+        Opt-in `merge: true` for l4BookUpdates unions coins into the connection's coin-list slots;
+        tier coin cap now applies to the post-merge effective set. merge will become the default in a
+        future release (set it explicitly now).
+  - version: '2026-08-07'
+    date: '2026-08-07'
+    breaking: false
+    highlights:
+      - >-
+        New userTwapStatusUpdates subscription (user-scoped counterpart of allTwapStatusUpdates); TWAP
+        status channels now carry trigger-TWAP fields (triggerPx, triggerAbove, stopPx) and new status
+        values waitingForTrigger and stopped.
+  - version: '2026-08-04'
+    date: '2026-08-04'
+    breaking: false
+    highlights:
+      - >-
+        Optional requestId capped at 128 chars; inbound WS frames capped (default 256 KiB); active-market
+        metadata refresh now includes HIP-4 outcome markets via outcomeMeta.
+  - version: '2026-07-22'
+    date: '2026-07-22'
+    breaking: false
+    highlights:
+      - >-
+        Attributable subscription feedback: optional requestId echoed on confirmations/rejects;
+        subscriptionUpdate adds operation/subscription/unsubscribed; orderbook rejects add stable
+        code/details fields.
