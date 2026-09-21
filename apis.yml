@@ -1,0 +1,72 @@
+name: Hydromancer
+description: >-
+  Leading Hyperliquid data provider offering real-time REST and WebSocket APIs, orderbook streaming, liquidations feeds,
+  oracle data, and historical datasets for the Hyperliquid ecosystem.
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/hydromancer-leading-hyperliquid-data-provider/refs/heads/main/apis.yml
+created: '2026-09-21'
+modified: '2026-09-21'
+specificationVersion: '0.21'
+tags:
+  - Hyperliquid
+  - Blockchain
+  - Web3
+  - DeFi
+  - Crypto trading data
+  - Market data
+  - Real-time
+  - WebSocket streaming
+  - Historical data
+  - Orderbook data
+apis:
+  - name: Hydromancer REST API
+    description: >-
+      Hyperliquid data REST API using a single POST /info operation dispatcher (type field selects the operation).
+      Bearer-token authentication. Provides user state, positions, asset data, order data, historical fills, vaults, and
+      premium endpoints.
+    humanURL: https://docs.hydromancer.xyz
+    baseURL: https://api.hydromancer.xyz
+    tags:
+      - Hyperliquid
+      - Blockchain
+      - Web3
+      - DeFi
+      - Crypto trading data
+      - Market data
+      - Real-time
+      - WebSocket streaming
+      - Historical data
+      - Orderbook data
+    properties:
+      - type: Documentation
+        url: https://docs.hydromancer.xyz
+      - type: LLMsTxt
+        url: https://docs.hydromancer.xyz/llms.txt
+  - name: Hydromancer WebSocket API
+    description: >-
+      Real-time WebSocket streams for Hypercore events, orderbooks (L2/L4), trades, and account updates. API key passed
+      as a query parameter.
+    humanURL: https://docs.hydromancer.xyz
+    baseURL: wss://api.hydromancer.xyz/ws
+    tags:
+      - Hyperliquid
+      - Blockchain
+      - Web3
+      - DeFi
+      - Crypto trading data
+      - Market data
+      - Real-time
+      - WebSocket streaming
+      - Historical data
+      - Orderbook data
+    properties:
+      - type: Documentation
+        url: https://docs.hydromancer.xyz
+maintainers:
+  - FN: Hydromancer
+    url: https://hydromancer.xyz
+generated:
+  by: apis.io/add
+  model: claude-opus-4-8
+  confidence: 95
+  at: '2026-09-21T07:44:02.931Z'
