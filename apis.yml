@@ -20,6 +20,17 @@ tags:
 - Web3
 - DeFi
 - Crypto trading data
+- Market Data
+- Real-Time
+- WebSocket streaming
+- Historical Data
+- Orderbook data
+tags_raw:
+- Hyperliquid
+- Blockchain
+- Web3
+- DeFi
+- Crypto trading data
 - Market data
 - Real-time
 - WebSocket streaming
@@ -85,6 +96,17 @@ apis:
   - Web3
   - DeFi
   - Crypto trading data
+  - Market Data
+  - Real-Time
+  - WebSocket streaming
+  - Historical Data
+  - Orderbook data
+  tags_raw:
+  - Hyperliquid
+  - Blockchain
+  - Web3
+  - DeFi
+  - Crypto trading data
   - Market data
   - Real-time
   - WebSocket streaming
@@ -101,6 +123,17 @@ apis:
   humanURL: https://docs.hydromancer.xyz
   baseURL: wss://api.hydromancer.xyz/ws
   tags:
+  - Hyperliquid
+  - Blockchain
+  - Web3
+  - DeFi
+  - Crypto trading data
+  - Market Data
+  - Real-Time
+  - WebSocket streaming
+  - Historical Data
+  - Orderbook data
+  tags_raw:
   - Hyperliquid
   - Blockchain
   - Web3
