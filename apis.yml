@@ -14,6 +14,9 @@ modified: '2026-09-21'
 
 specificationVersion: '0.21'
 
+x-docs-platform: gitbook
+x-docs-platform-confidence: high
+x-docs-platform-checked: 2026-10-03
 tags:
 - Hyperliquid
 - Blockchain
