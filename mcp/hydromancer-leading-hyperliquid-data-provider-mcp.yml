@@ -1,9 +1,8 @@
 generated: '2026-09-21'
 method: probed
-source: >-
-  https://docs.hydromancer.xyz/.well-known/mcp/server-card.json (served, content-type
-  application/mcp-server-card+json) + live tools/list POST to https://docs.hydromancer.xyz/~gitbook/mcp
-  (HTTP 200, text/event-stream) on 2026-09-21.
+source: https://docs.hydromancer.xyz/.well-known/mcp/server-card.json (served, content-type application/mcp-server-card+json)
+  + live tools/list POST to https://docs.hydromancer.xyz/~gitbook/mcp (HTTP 200, text/event-stream) on
+  2026-09-21.
 status: active
 server:
   name: Hydromancer MCP Server
@@ -11,8 +10,13 @@ server:
   version: 0.27.2
   website: https://docs.hydromancer.xyz
   transport: streamable-http
-  provider: GitBook-hosted documentation MCP, served from Hydromancer's own docs domain and branded as the Hydromancer MCP Server
-  supported_protocol_versions: ['2025-06-18', '2025-03-26', '2024-11-05', '2024-10-07']
+  provider: GitBook-hosted documentation MCP, served from Hydromancer's own docs domain and branded as
+    the Hydromancer MCP Server
+  supported_protocol_versions:
+  - '2025-06-18'
+  - '2025-03-26'
+  - '2024-11-05'
+  - '2024-10-07'
 auth: none
 deployment:
   mode: remote
@@ -20,18 +24,40 @@ deployment:
   auth: none
   verified: probed
 tools:
-  - name: searchDocumentation
-    description: >-
-      Search across the Hydromancer documentation to find relevant information, code examples, API
-      references and guides; returns contextual content with titles and direct links.
-  - name: getPage
-    description: Fetch the full markdown content of a specific Hydromancer documentation page.
-  - name: sendFeedback
-    description: Report an issue in the Hydromancer documentation so the team can fix it.
-notes: >-
-  This is a documentation-search/read MCP server (search, fetch page, send feedback), not an MCP wrapper
-  over the trading-data REST/WebSocket API. It is a real, anonymously reachable remote agent surface
-  hosted on Hydromancer's own docs host (GitBook-powered). No MCP server exposing the /info data
-  operations is published; a data-API tool crosswalk cannot be derived because there is no OpenAPI to
-  ground it. Probes of mcp.hydromancer.xyz/mcp (connection error) and api.hydromancer.xyz/mcp (404)
-  returned nothing.
+- name: searchDocumentation
+  description: Search across the Hydromancer documentation to find relevant information, code examples,
+    API references and guides; returns contextual content with titles and direct links.
+- name: getPage
+  description: Fetch the full markdown content of a specific Hydromancer documentation page.
+- name: sendFeedback
+  description: Report an issue in the Hydromancer documentation so the team can fix it.
+notes: This is a documentation-search/read MCP server (search, fetch page, send feedback), not an MCP
+  wrapper over the trading-data REST/WebSocket API. It is a real, anonymously reachable remote agent surface
+  hosted on Hydromancer's own docs host (GitBook-powered). No MCP server exposing the /info data operations
+  is published; a data-API tool crosswalk cannot be derived because there is no OpenAPI to ground it.
+  Probes of mcp.hydromancer.xyz/mcp (connection error) and api.hydromancer.xyz/mcp (404) returned nothing.
+tool_quality:
+  tool_count: 3
+  tokens_total: 850
+  tokens_per_tool_median: 185
+  heavy_tools: []
+  heavy_tool_count: 0
+  params_total: 5
+  params_undescribed: 1
+  params_described_pct: 80.0
+  tools_with_undescribed_params: 1
+  tools_annotated: 3
+  annotated_pct: 100.0
+  state_changing_unhinted: []
+  tools_missing_schema: 0
+  short_descriptions: 0
+  duplicate_descriptions: 0
+  duplicate_names: 0
+  nonportable_names: []
+  output_schema_count: 0
+  token_estimate: chars/3.6 of each compact tool definition
+  source: mcp/hydromancer-leading-hyperliquid-data-provider-mcp-tools.json
+  measured: '2026-10-20'
+  scored: false
+  note: Facts from the saved tools/list capture (mcp_tool_quality.py); recorded, not scored. Checks learned
+    from Glimind's agent-readiness audit.
