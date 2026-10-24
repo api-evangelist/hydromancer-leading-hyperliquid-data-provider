@@ -18,7 +18,7 @@ artifacts:
   front-door-ai/2026-09-17.yml:
     method: unknown
     evidence: no authorship recorded
-  kin/checks-2026-09-24T161608.yml:
+  kin/checks-2026-10-11T110117.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-09-21T233935.yml:
@@ -39,12 +39,30 @@ artifacts:
   kin/score-2026-09-24T161608.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-25T210408.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-25T232841.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-10-03T000835.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-10-03T024842.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-10-11T110117.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
   lifecycle/hydromancer-leading-hyperliquid-data-provider-lifecycle.yml:
     method: searched
     evidence: declared in the artifact
   llms/hydromancer-leading-hyperliquid-data-provider-llms.txt:
     method: searched
     evidence: 'derive-llms-provenance.py: harvested'
+  mcp/hydromancer-leading-hyperliquid-data-provider-mcp-tools.json:
+    method: unknown
+    evidence: no authorship recorded
   mcp/hydromancer-leading-hyperliquid-data-provider-mcp.yml:
     method: unknown
     evidence: no authorship recorded
