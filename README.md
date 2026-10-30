@@ -1,4 +1,4 @@
-# hydromancer-leading-hyperliquid-data-provider
+# Hydromancer
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,4 +64,111 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Leading Hyperliquid data provider offering real-time REST and WebSocket APIs, orderbook streaming, liquidations feeds, oracle data, and historical datasets for the Hyperliquid ecosystem.
+Hydromancer is data infrastructure for the Hyperliquid ecosystem, offering real-time REST and WebSocket APIs, L2/L4 orderbook streaming, liquidations feeds, oracle and perp/spot price data, HIP-3/HIP-4 market events, and granular historical datasets (via its Reservoir exports). The REST API is a single POST /info dispatcher with Bearer-token authentication and token-metered subscription pricing; the WebSocket API delivers low-latency streams with tiered connection and subscription limits. Documentation is agent-native (llms.txt plus Markdown twins of every page). Onboarding is manual, with a discretionary free tier for public-goods and early-stage teams.
+
+**Areas:** Hyperliquid · Blockchain · Web3 · DeFi · Crypto trading data · Market Data · Real-Time · WebSocket streaming · Historical Data · Orderbook data
+
+## Hydromancer on APIs.io
+
+Everything profiled for Hydromancer is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/hydromancer-leading-hyperliquid-data-provider/](https://apis.io/providers/hydromancer-leading-hyperliquid-data-provider/)** — or go straight to one of the APIs or properties below.
+
+### APIs (2)
+
+- [Hydromancer REST API](https://apis.io/apis/hydromancer-leading-hyperliquid-data-provider/hydromancer-rest-api/) — Hyperliquid data REST API using a single POST /info operation dispatcher (type field selects the operation). Bearer-token authentication. Provides user…
+- [Hydromancer WebSocket API](https://apis.io/apis/hydromancer-leading-hyperliquid-data-provider/hydromancer-websocket-api/) — Real-time WebSocket streams for Hypercore events, orderbooks (L2/L4), trades, and account updates. API key passed as a query parameter.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [Hydromancer MCP Server](https://apis.io/servers/hydromancer-leading-hyperliquid-data-provider/hydromancer-mcp-server/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Hydromancer Leading Hyperliquid Data Provider Authentication](https://apis.io/security/hydromancer-leading-hyperliquid-data-provider/hydromancer-leading-hyperliquid-data-provider-authentication/)
+- [Hydromancer Leading Hyperliquid Data Provider Domain Security](https://apis.io/security/hydromancer-leading-hyperliquid-data-provider/hydromancer-leading-hyperliquid-data-provider-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Hydromancer Leading Hyperliquid Data Provider Plans Pricing](https://apis.io/plans/hydromancer-leading-hyperliquid-data-provider/hydromancer-leading-hyperliquid-data-provider-plans-pricing/)
+
+#### Rate limits (2)
+
+Published request limits.
+
+- [Hydromancer Leading Hyperliquid Data Provider Rate Limits](https://apis.io/rate-limits/hydromancer-leading-hyperliquid-data-provider/hydromancer-leading-hyperliquid-data-provider-rate-limits/)
+- [Hydromancer Leading Hyperliquid Data Provider Websocket Rate Limits](https://apis.io/rate-limits/hydromancer-leading-hyperliquid-data-provider/hydromancer-leading-hyperliquid-data-provider-websocket-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://hydromancer.xyz)
+- [Documentation](https://docs.hydromancer.xyz)
+- [API reference](https://docs.hydromancer.xyz/readme/rest-api)
+- [Pricing](https://docs.hydromancer.xyz/readme/pricing)
+- [Support](https://hydromancer.xyz/contact)
+- [Blog](https://hydromancer.xyz/blog)
+
+## API Evangelist rating
+
+**Kin Score 30.8** — thin · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 71.7 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 55.3 |
+| Developer ergonomics | 42.9 |
+| Access clarity | 42.1 |
+
+**Agent readiness 11.4** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | documented (partial credit) |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 16.7** — Securities & Market Data
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/hydromancer-leading-hyperliquid-data-provider/](https://apis.io/providers/hydromancer-leading-hyperliquid-data-provider/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Hydromancer: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/hydromancer-leading-hyperliquid-data-provider/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
